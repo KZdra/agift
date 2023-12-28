@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MAU KASIH TAU AJA!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="style.css">
+ <link
+ rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+</head>
+
+<body>
+    <video autoplay muted loop id="myVideo">
+        <source src="bg.mp4" type="video/mp4">
+      </video>
+
+  <div class="card animate__animated animate__fadeIn" id="inputCard">
+    <form id="nameForm">
+        <div class="name">
+            <label for="name">Nama:</label>
+        </div>
+      <input type="text" id="name" name="name" class="input" required>
+      <div class="div">
+        <button class="comic-button" type="button" onclick="checkName()">Submit</button>
+    </div>
+    </form>
+  </div>
+
+  <div class="card animate__animated animate__slideInUp" id="result" style="display: none;">
+    <p>Hi Nadya!</p>
+    <p>jadi gini...</p>
+    <p>LOREM IPSUM DOLOR SIT AMET</p>
+    <p>jadii boleh ga aku jadi punya kamu?</p>
+    <div class="yesno">
+        <div> <a href="flower.html" class="butt"><span>BOLEH</span></a></div>
+       <div> <a class="butt run" id="move" onClick="runaway(this)"><span>NGGA</span></a></div>
+    </div>
+  </div>
+
+  <script>
+    function checkName() {
+      var nameInput = document.getElementById('name').value;
+      var inputCard = document.getElementById('inputCard');
+      var result = document.getElementById('result');
+
+      if (nameInput.toLowerCase() === 'nadya') {
+        // Hide input card and show result card
+        inputCard.style.display = 'none';
+        result.style.display = 'block';
+      } else {
+        alert('LU SIAPA?');
+      }
+    }
+
+    function runaway(id) {
+            id.style.top = Math.round(Math.random() * 500) - 100 + 'px';  // Increased range to 500
+            id.style.left = Math.round(Math.random() * 500) - 200 + 'px'; // Increased range to 500
+        }
+  </script>
+
+</body>
+</html>
